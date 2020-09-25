@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="post" action="{% url 'api:newCustomerForm'}">
+      <label for="customer_name">Customer Name:</label>
+      <input type="text" class="text" name="customer_name" id="customer_name" />
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" class="date" name="birthdate" id="birthdate" />
+      <label for="nric"
+        >NRIC:(e.g. S1234567A, where A is capital and alphanumeric)</label
+      >
+      <input
+        type="text"
+        class="text"
+        name="nric"
+        id="nric"
+        required_pattern="S[\d]{7}[A-Z]"
+      />
+      <label for="product_type">product_type:</label>
+      <select id="product_type" name="product_type">
+        <option value="137">Investor</option>
+        <option value="070">Insurance</option>
+        <option value="291">Loans</option>
+        <option value="969">Savings</option>
+        <option value="555">Credit Cards</option>
+      </select>
+      <input type="submit" class="submit" value="Send" />
+    </form>
+  </body>
+</html>
