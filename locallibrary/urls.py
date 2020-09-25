@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-# Use include() to add paths from the catalog application 
+# Use include() to add paths from the catalog application
 from django.urls import include
 from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('customerform/', include("newCustomerForm.urls")),
+    path('home/', include("home.urls")),
+    path('completionpage/', include("CompletionPage.urls"))
 ]
-
