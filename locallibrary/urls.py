@@ -23,5 +23,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('customerform/', include("newCustomerForm.urls")),
-    path('home/', include("home.urls"))
+    path('home/', include("home.urls")),
+    path('completionpage/', include("CompletionPage.urls"))
 ]
